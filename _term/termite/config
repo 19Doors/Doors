@@ -1,0 +1,97 @@
+[options]
+allow_bold = true
+#audible_bell = false
+#bold_is_bright = true
+#cell_height_scale = 1.0
+#cell_width_scale = 1.0
+clickable_url = true
+dynamic_title = true
+#font =  UbuntuMono Nerd Font 23
+font =  mononoki Nerd Font 10
+#font = monospace 9
+#fullscreen = true
+#icon_name = terminal
+#mouse_autohide = false
+#scroll_on_output = false
+#scroll_on_keystroke = true
+# Length of the scrollback buffer, 0 disabled the scrollback buffer
+# and setting it to a negative value means "infinite scrollback"
+scrollback_lines = 10000
+#search_wrap = true
+#urgent_on_bell = true
+#hyperlinks = false
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+browser = xdg-open
+
+# "system", "on" or "off"
+cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# Hide links that are no longer valid in url select overlay mode
+#filter_unmatched_urls = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+# set size hints for the window
+#size_hints = false
+
+# "off", "left" or "right"
+#scrollbar = off
+
+# ====================================
+[colors]
+
+# Base16 OneDark
+# Author: Lalit Magant (http://github.com/tilal6991)
+
+foreground          = #b6beca
+foreground_bold     = #b6beca
+cursor              = #b6beca
+cursor_foreground   = #b6beca
+background          = #101419
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0 	= #242931
+color8  = #485263
+
+# Red
+color1 = #e05f65
+color9 = #e05f65
+
+# Green
+color2  = #78DBA9
+color10 = #78DBA9
+
+# Yellow
+color3  = #f1cf8a
+color11 = #f1cf8a
+
+# Blue
+color4  = #70a5eb
+color12 = #70a5eb
+
+# Magenta
+color5  = #c68aee
+color13 = #c68aee
+
+# Cyan
+color6  = #74bee9
+color14 = #74bee9
+
+# White
+color7  = #dee1e6
+color15 = #dee1e6
+
+# Extra colors
+#color16 = #d19a66
+#color17 = #be5046
+#color18 = #353b45
+#color19 = #3e4451
+#color20 = #565c64
+#color21 = #b6bdca

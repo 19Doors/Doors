@@ -1,0 +1,18 @@
+(defwindow powermenu
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "0px"
+                               :width "10%"
+                               :height "8%"
+                               :anchor "bottom right")
+           :stacking "fg"
+           ;;:reserve (struts :distance "40px" :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+  (main))
+
+(defwidget main []
+    (box :orientation "h" :class "bigpower"
+      (eventbox :cursor "pointer" :onclick "shutdown now" "")
+      (eventbox :cursor "pointer" :onclick "reboot" "")
+      (eventbox :cursor "pointer" :onclick "kill -9 -1" "")))

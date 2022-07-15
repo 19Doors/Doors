@@ -1,0 +1,10 @@
+#!/bin/sh
+
+title=$(spotify-now "%title")
+
+if [ $title -eq 1 ] ; then
+    echo "Desktop"
+else
+    echo "$title"
+fi
+

@@ -1,0 +1,36 @@
+#!/bin/python3
+from libqtile.command.client import InteractiveCommandClient
+
+c = InteractiveCommandClient()
+
+w1 = c.group["1"].info().get("label")
+w2 = c.group["2"].info().get("label")
+w3 = c.group["3"].info().get("label")
+w4 = c.group["4"].info().get("label")
+w5 = c.group["5"].info().get("label")
+w0 = c.group["0"].info().get("label")
+
+w1 = ""
+w2 = ""
+w3 = ""
+w4 = ""
+w5 = ""
+w0 = ""
+
+for i in range(6):
+    out = str(c.group[str(i)].info().get("focus"))
+    if out == "None":
+        if i == 0:
+            w0 = ""
+        if i == 1:
+            w1 = ""
+        if i == 2:
+            w2 = ""
+        if i == 3:
+            w3 = ""
+        if i == 4:
+            w4 = ""
+        if i == 5:
+            w5 = ""
+
+print(f"(box :class 'workspace' :orientation 'h' :space-evenly false (button :class 'w1' :onclick 'wmctrl -s 0' '{w1}') (button :class 'w2' :onclick 'wmctrl -s 1' '{w2}') (button :class 'w3' :onclick 'wmctrl -s 2' '{w3}') (button :class 'w4' :onclick 'wmctrl -s 3' '{w4}') (button :class 'w5' :onclick 'wmctrl -s 4' '{w5}') (button :class 'w0' :onclick 'wmctrl -s 5' '{w0}'))")

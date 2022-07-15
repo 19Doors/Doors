@@ -1,0 +1,79 @@
+$background: #101419;
+$foreground: #b6beca;
+$foreground-white: #dee1e6;
+$blue: #70a5eb;
+$contrast_blue: #5f94da;
+$darker_blue: #4e88d4;
+$green: #78DBA9;
+$yellow: #f1cf8a;
+$orange: #e9a180;
+$aquamarine: #7ddac5;
+$magenta: #c68aee;
+$cyan: #74bee9;
+$black: #242931;
+$light_black: #485263;
+$red: #e05f65;
+$light_grey: #21262e;
+
+@import "widgets/cal/cal.scss";
+@import "widgets/dashshort/dash.scss";
+
+.bar {
+    background: $background;
+    color: $foreground-white;
+    font-family: Iosevka Nerd Font;
+    //font-family: JetBrainsMono Nerd Font;
+}
+
+.brand {
+    margin: 6px 0px 6px 5px;
+}
+
+.uname {
+    font-weight: bold;
+    font-size: 14px;
+    background-color: $light_grey;
+    border-radius: 1000px;
+    padding: 2px 12px 2px 12px;
+}
+
+.workspace {
+    margin: 7px 7px 0px 17px;
+}
+
+.w0, .w1, .w2, .w3, .w4, .w5 {
+    padding: 0px 12px 0px 2px;
+}
+
+.sep {
+    font-size: 14px;
+    margin: 0px 5px 0px 5px;
+    color: $light_grey;
+    font-weight: bolder;
+}
+
+.storage {
+
+}
+
+.sticon {
+    font-size: 14px;
+    padding: 0px 14px 0px 14px;
+}
+
+.sttext {
+    font-weight: bold;
+}
+
+.datetime {
+    font-size: 14px;
+    margin: 6px 5px 6px 0px;
+}
+
+.time {
+    font-weight: bolder;
+    font-size: 0.875em;
+    background-color: $light_grey;
+    border-radius: 1000px;
+    padding: 2px 12px 2px 12px;
+}

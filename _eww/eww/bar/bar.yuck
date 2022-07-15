@@ -1,0 +1,74 @@
+;
+; ██████╗  █████╗ ██████╗ 
+; ██╔══██╗██╔══██╗██╔══██╗
+; ██████╔╝███████║██████╔╝
+; ██╔══██╗██╔══██║██╔══██╗
+; ██████╔╝██║  ██║██║  ██║
+; ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+; Author: @19Doors
+
+(include "bar/widgets/cal/cal.yuck")
+(include "bar/widgets/dashshort/dash.yuck")
+(include "bar/variables.yuck")
+(defwindow bar
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "0px"
+                               :width "100%"
+                               :height "2%"
+                               :anchor "top center")
+           :stacking "fg"
+           :reserve (struts :distance "34px" :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+  (bar))
+
+(defwidget bar []
+  (box :class "bar" :orientation "h" :space-evenly "true" 
+    (left)
+    (center)
+    (right)))
+
+
+(defwidget left []
+  (box :class "left" :orientation "h" :halign "start"
+    (lef)))
+
+(defwidget lef[]
+  (box :class "ok" :orientation "h" :space-evenly false
+    (brand)
+    (workspaces)))
+
+(defwidget workspaces []
+  (literal :content workspace))
+
+
+(defwidget brand []
+  (box :class "brand" :orientation "h" 
+    (button :class "uname" :onclick "eww open --toggle dash" "@19Doors")))
+
+
+(defwidget center []
+  (box :class "center" :orientation "h" :halign "center"))
+
+
+(defwidget right []
+  (box :class "right" :orientation "h" :halign "end" :space-evenly false
+    (storage)
+    (sep)
+    (time)))
+
+
+(defwidget storage []
+  (box :class "storage" :orientation "h" :tooltip "Storage" :space-evenly false
+    (label :class "sticon" :text "")
+    (label :class "sttext" :text storage)))
+
+(defwidget sep []
+  (box :orientation "h" :class "sep" 
+    (label :class "sepl" :text "|")))
+
+(defwidget time []
+  (box :class "datetime" :orientation "h" :hexpand "false"
+    (button :class "time":onclick "eww open --toggle cal" datetime)))

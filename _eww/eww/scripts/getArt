@@ -1,0 +1,14 @@
+#!/bin/sh
+
+pathtmp="$HOME/.cache/eww"
+
+if [ ! -d $pathtmp ]; then
+    mkdir -p "$HOME/.cache/eww"
+fi
+
+imgp="$( echo $(playerctl metadata mpris:artUrl))"
+#echo $imgp
+
+curl $imgp --output "$HOME/.config/eww/tmp.png"
+
+echo tmp.png
