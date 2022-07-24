@@ -1,2 +1,4 @@
 (include 'powermenu/powermenu.yuck')
 (include 'bar/bar.yuck')
+(include 'noti/noti.yuck')
+(include 'colorpalette/colorpalette.yuck')

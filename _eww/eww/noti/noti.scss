@@ -1,0 +1,23 @@
+* {
+    all: unset;
+}
+
+.noti {
+    background: $background;
+    color: $foreground-white;
+    font-family: Iosevka Nerd Font;
+    border-radius: 10px;
+}
+
+.noti-text {
+    background-color: $light_grey;
+    border-radius: 10px;
+    padding: 10px 0px 10px 0px;
+    margin: 12px;
+    margin-bottom: 7px;
+}
+
+.noti-t-l {
+    font-size: 14px;
+    font-weight: bolder;
+}

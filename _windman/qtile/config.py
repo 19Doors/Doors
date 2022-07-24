@@ -104,7 +104,9 @@ keys = [
     Key([mod], "o", lazy.spawn("maim Pictures/Screenshots/ok.png")),
 
 
-    Key(["control"], "p", lazy.spawn("powermenu"))
+    Key(["control"], "p", lazy.spawn("powermenu")),
+    Key(["control"], "n", lazy.spawn("eww open --toggle noti")),
+    Key(["control"], "o", lazy.spawn("eww open --toggle colorpalette"))
 
 ]
 
@@ -185,11 +187,12 @@ colors = ['#010206', '#F1EDEE', '#7A6563', '#36C9C6', '#56667A']
 layouts = [
     layout.Columns(
         margin=[6,6,6,6],
-        border_focus = '#21262e',
+        border_focus = "#21262e",
+        # border_focus = ['#101419','#101419','#dee1e6'],
         border_width = 2,
         border_on_single = True,
 
-        border_normal = '#21262e'
+        border_normal = '21262e'
         ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -319,6 +322,7 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"), # GPG key password entry
         Match(title="xterm"),
+        Match(title="dolphin"),
     ],
 
 

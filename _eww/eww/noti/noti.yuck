@@ -1,0 +1,26 @@
+(defwindow noti
+           :monitor 0
+           :geometry (geometry :x "542px"
+                               :y "38px"
+                               :width "20%"
+                               :height "728px"
+                               :anchor "top center")
+           :stacking "fg"
+           :windowtype "dock"
+           :wm-ignore true
+  (noti))
+
+(defwidget noti []
+  (box :class "noti" :orientation "v" :space-evenly false 
+    (noti-text)
+    (noti-main)))
+
+(defwidget noti-text []
+  (box :class "noti-text" :orientation "v" :space-evenly false 
+    (label :class "noti-t-l" :text "NOTIFICATIONS")))
+
+(defwidget noti-main []
+  (label :text foo))
+
+(defvar foo "")
+(defpoll logger :interval "1s" "$HOME/.config/dunst/logger.sh")

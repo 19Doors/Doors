@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/sakaar/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/sakaar/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/sakaar/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/sakaar/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/sakaar/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+local package_path_str = "/home/sakaar/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/sakaar/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/sakaar/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/sakaar/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/sakaar/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -69,35 +69,34 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  Colorschemes = {
+  LuaSnip = {
     loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/Colorschemes",
-    url = "https://github.com/LunarVim/Colorschemes"
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["auto-pairs"] = {
+  ["better-escape.nvim"] = {
     loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
+    url = "https://github.com/max397574/better-escape.nvim"
   },
-  ["barbar.nvim"] = {
+  ["bufferline.nvim"] = {
     loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/barbar.nvim",
-    url = "https://github.com/romgrk/barbar.nvim"
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
+  ["cinnamon.nvim"] = {
+    loaded = true,
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/cinnamon.nvim",
+    url = "https://github.com/declancm/cinnamon.nvim"
   },
   ["cmp-buffer"] = {
-    after_files = { "/home/sakaar/.local/share/nvim/site/pack/packer/opt/cmp-buffer/after/plugin/cmp_buffer.lua" },
-    load_after = {},
     loaded = true,
-    needs_bufread = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/cmp-buffer",
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-cmdline"] = {
-    after_files = { "/home/sakaar/.local/share/nvim/site/pack/packer/opt/cmp-cmdline/after/plugin/cmp_cmdline.lua" },
-    load_after = {},
     loaded = true,
-    needs_bufread = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/cmp-cmdline",
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
@@ -106,120 +105,79 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-path"] = {
-    after_files = { "/home/sakaar/.local/share/nvim/site/pack/packer/opt/cmp-path/after/plugin/cmp_path.lua" },
-    load_after = {},
     loaded = true,
-    needs_bufread = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/cmp-path",
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["cmp-vsnip"] = {
-    after_files = { "/home/sakaar/.local/share/nvim/site/pack/packer/opt/cmp-vsnip/after/plugin/cmp_vsnip.vim" },
-    load_after = {},
+  cmp_luasnip = {
     loaded = true,
-    needs_bufread = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["dashboard-nvim"] = {
-    config = { "require('starting.dashboardl')" },
     loaded = true,
     path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
-  ["fzf.vim"] = {
-    config = { "require('utils/fzfl')" },
-    keys = { { "", "n" }, { "", "<Leader>of" } },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/fzf.vim",
-    url = "https://github.com/junegunn/fzf.vim"
-  },
-  ["hop.nvim"] = {
-    config = { "require('utils.hopl')" },
+  decay = {
     loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/hop.nvim",
-    url = "https://github.com/phaazon/hop.nvim"
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/decay",
+    url = "https://github.com/decaycs/decay.nvim"
   },
-  ["lspsaga.nvim"] = {
-    config = { "require('lsp/lspsagal')" },
-    load_after = {},
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim",
-    url = "https://github.com/tami5/lspsaga.nvim"
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lualine.nvim"] = {
-    config = { "require('theme/statuslinel')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
+    loaded = true,
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  nerdtree = {
+  ["neovim-session-manager"] = {
     loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/nerdtree",
-    url = "https://github.com/preservim/nerdtree"
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/neovim-session-manager",
+    url = "https://github.com/Shatur/neovim-session-manager"
   },
-  ["null-ls.nvim"] = {
-    config = { "require('formatter/nullsl')" },
-    keys = { { "", "n" }, { "", "<leader>fo" } },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-vsnip", "cmp-cmdline", "nvim-jdtls", "vim-vsnip", "cmp-path", "cmp-buffer" },
-    config = { "require('lsp/cmpl')" },
-    load_after = {},
     loaded = true,
-    needs_bufread = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/nvim-cmp",
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-comment"] = {
-    config = { "require('utils.commentslua')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/nvim-comment",
-    url = "https://github.com/terrortylor/nvim-comment"
-  },
-  ["nvim-jdtls"] = {
-    load_after = {},
+  ["nvim-lsp-installer"] = {
     loaded = true,
-    needs_bufread = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/nvim-jdtls",
-    url = "https://github.com/mfussenegger/nvim-jdtls"
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
-    after = { "lspsaga.nvim" },
     loaded = true,
-    only_config = true
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    config = { "require('theme/syntaxhigh')" },
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/nvim-treesitter",
+    loaded = true,
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
-  ["onedark.nvim"] = {
-    config = { "require('theme/theme')" },
-    loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -231,141 +189,24 @@ _G.packer_plugins = {
     path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["presence.nvim"] = {
-    config = { "require('discord.discord')" },
+  ["smart-splits.nvim"] = {
     loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/presence.nvim",
-    url = "https://github.com/andweeb/presence.nvim"
-  },
-  tagbar = {
-    config = { "require('tagbarl')" },
-    keys = { { "", "n" }, { "", "<C-b>" } },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/tagbar",
-    url = "https://github.com/preservim/tagbar"
+    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/smart-splits.nvim",
+    url = "https://github.com/mrjones2014/smart-splits.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["toggleterm.nvim"] = {
-    config = { "require('toggleterml')" },
-    keys = { { "", "n" }, { "", "<Leader>t" } },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["trouble.nvim"] = {
-    config = { "require('lsp/troublel')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/trouble.nvim",
-    url = "https://github.com/folke/trouble.nvim"
-  },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
-  },
-  ["vim-move"] = {
-    loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/vim-move",
-    url = "https://github.com/matze/vim-move"
-  },
-  ["vim-vsnip"] = {
-    load_after = {},
-    loaded = true,
-    needs_bufread = false,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/opt/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["vscode-java"] = {
-    loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/vscode-java",
-    url = "https://github.com/redhat-developer/vscode-java"
-  },
-  ["wal.vim"] = {
-    loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/wal.vim",
-    url = "https://github.com/dylanaraps/wal.vim"
-  },
-  ["which-key.nvim"] = {
-    config = { "require('whichkeyl')" },
-    loaded = true,
-    path = "/home/sakaar/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: hop.nvim
-time([[Config for hop.nvim]], true)
-require('utils.hopl')
-time([[Config for hop.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('lsp/lspconfig')
-time([[Config for nvim-lspconfig]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-require('whichkeyl')
-time([[Config for which-key.nvim]], false)
--- Config for: onedark.nvim
-time([[Config for onedark.nvim]], true)
-require('theme/theme')
-time([[Config for onedark.nvim]], false)
--- Config for: dashboard-nvim
-time([[Config for dashboard-nvim]], true)
-require('starting.dashboardl')
-time([[Config for dashboard-nvim]], false)
--- Config for: presence.nvim
-time([[Config for presence.nvim]], true)
-require('discord.discord')
-time([[Config for presence.nvim]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd cmp-nvim-lsp ]]
-vim.cmd [[ packadd nvim-cmp ]]
-
--- Config for: nvim-cmp
-require('lsp/cmpl')
-
-vim.cmd [[ packadd cmp-cmdline ]]
-vim.cmd [[ packadd cmp-path ]]
-vim.cmd [[ packadd vim-vsnip ]]
-vim.cmd [[ packadd cmp-vsnip ]]
-vim.cmd [[ packadd cmp-buffer ]]
-vim.cmd [[ packadd nvim-jdtls ]]
-time([[Sequenced loading]], false)
--- Keymap lazy-loads
-time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> n <cmd>lua require("packer.load")({'tagbar'}, { keys = "n", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> <leader>fo <cmd>lua require("packer.load")({'null-ls.nvim'}, { keys = "<lt>leader>fo", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> <Leader>of <cmd>lua require("packer.load")({'fzf.vim'}, { keys = "<lt>Leader>of", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> n <cmd>lua require("packer.load")({'null-ls.nvim'}, { keys = "n", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> <Leader>t <cmd>lua require("packer.load")({'toggleterm.nvim'}, { keys = "<lt>Leader>t", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> n <cmd>lua require("packer.load")({'fzf.vim'}, { keys = "n", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> <C-b> <cmd>lua require("packer.load")({'tagbar'}, { keys = "<lt>C-b>", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> n <cmd>lua require("packer.load")({'toggleterm.nvim'}, { keys = "n", prefix = "" }, _G.packer_plugins)<cr>]]
-time([[Defining lazy-load keymaps]], false)
-
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Event lazy-loads
-time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-treesitter', 'trouble.nvim', 'lualine.nvim', 'lspsaga.nvim', 'nvim-comment'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
-time([[Defining lazy-load event autocommands]], false)
-vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

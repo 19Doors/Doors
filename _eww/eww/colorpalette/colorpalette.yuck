@@ -1,0 +1,48 @@
+;  ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ██████╗  █████╗ ██╗     ███████╗████████╗████████╗███████╗
+; ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔══██╗██╔══██╗██║     ██╔════╝╚══██╔══╝╚══██╔══╝██╔════╝
+; ██║     ██║   ██║██║     ██║   ██║██████╔╝██████╔╝███████║██║     █████╗     ██║      ██║   █████╗  
+; ██║     ██║   ██║██║     ██║   ██║██╔══██╗██╔═══╝ ██╔══██║██║     ██╔══╝     ██║      ██║   ██╔══╝  
+; ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║██║     ██║  ██║███████╗███████╗   ██║      ██║   ███████╗
+;  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚══════╝
+; Author: @19Doors
+
+(defwindow colorpalette
+           :monitor 0
+           :geometry (geometry :x "542px"
+                               :y "38px"
+                               :width "20%"
+                               :height "728px"
+                               :anchor "top center")
+           :stacking "fg"
+           :windowtype "dock"
+           :wm-ignore true
+  (colorp))
+
+(defwidget colorp []
+  (box :class "colorp" :orientation "v" :space-evenly false
+    (colorpm)))
+
+(defwidget colorpm []
+  (box :class "colorpm" :orientation "v" :space-evenly false 
+    (label :class "colorpt" :text "ColorPalette")
+    (box :class "colormb" :orientation "v" :space-evenly false 
+    (colors :name "foreground" :chex "#dee1e6")
+    (colors :name "background" :chex "#101419")
+    (colors :name "blue" :chex "#70a5eb")
+    (colors :name "contrast_blue" :chex "#5f94da")
+    (colors :name "darker_blue" :chex "#4e88d4")
+    (colors :name "green" :chex "#78DBA9")
+    (colors :name "yellow" :chex "#f1cf8a")
+    (colors :name "orange" :chex "#e9a180")
+    (colors :name "aquamarine" :chex "#7ddac5")
+    (colors :name "magenta" :chex "#c68aee")
+    (colors :name "cyan" :chex "#74bee9")
+    (colors :name "black" :chex "#242931")
+    (colors :name "light_black" :chex "#485263")
+    (colors :name "red" :chex "#e05f65")
+    (colors :name "light_grey" :chex "#21262e")
+    )))
+
+(defwidget colors [name chex]
+  (button :class "${name}c" :style  "background-color:${chex}; min-width: 50px; min-height: 12px; border-radius: 100; margin: 8px; ")
+  )
