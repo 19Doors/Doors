@@ -1,2 +1,1 @@
-require('core/core')
-require('config/config')
+require("core")
