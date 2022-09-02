@@ -55,10 +55,15 @@
 
 (defwidget right []
   (box :class "right" :orientation "h" :halign "end" :space-evenly false
+    (layout)
+    (sep)
     (storage)
     (sep)
     (time)))
 
+(defwidget layout []
+  (box :class "layout" :orientation "h" :space-evenly false 
+    (label :class "lttext" :text layout)))
 
 (defwidget storage []
   (box :class "storage" :orientation "h" :tooltip "Storage" :space-evenly false

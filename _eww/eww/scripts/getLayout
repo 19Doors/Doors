@@ -3,8 +3,14 @@ from libqtile.command.client import InteractiveCommandClient
 from libqtile.lazy import lazy
 
 c = InteractiveCommandClient()
+name = c.layout.info().get("name")
+name = name.upper()
 
+if(name == "COLUMNS"):
+    name = '  Columns'
+elif(name == "MAX"):
+    name = '  Max'
 try:
-    print(c.layout.info().get("name"))
+    print(name)
 except:
     print("")

@@ -41,6 +41,8 @@ browser = "brave"
 #def ok():
 #    now = datetime.now()
 #    current_time = now.strftime("%d|%b|%Y|%H:%M:%S")
+#    take = subprocess.run(["maim", "~/Pictures/Screenshots"+current_time+".png"])
+#    take.returncode
 #    lazy.spawn("maim Pictures/Screenshots/"+current_time+".png")
 
 # For my Cursor
@@ -102,6 +104,7 @@ keys = [
     Key([mod], "r", lazy.spawn("dmenu_run -h 28"), desc="Spawn a command using a prompt widget"),
     Key([mod, "control"], "p", lazy.spawn("rofi -show run")),
     Key([mod], "o", lazy.spawn("maim Pictures/Screenshots/ok.png")),
+#    Key([mod], "o", ok()),
 
 
     Key(["control"], "p", lazy.spawn("powermenu")),
@@ -189,7 +192,7 @@ layouts = [
         margin=[6,6,6,6],
         border_focus = "#21262e",
         # border_focus = ['#101419','#101419','#dee1e6'],
-        border_width = 2,
+        border_width = 3,
         border_on_single = True,
 
         border_normal = '21262e'
@@ -199,9 +202,10 @@ layouts = [
     # layout.Stack(num_stacks=2),
     layout.Bsp(),
     layout.Floating(
-        border_focus = '#F1EDEE',
-        border_normal = colors[4],
-        border_width = 0,
+        border_focus = "#21262e",
+        border_on_single = True,
+        border_width = 3,
+        border_normal = '21262e',
         ),
     layout.Matrix(),
     # layout.MonadTall(),
