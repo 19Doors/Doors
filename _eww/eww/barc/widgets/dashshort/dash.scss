@@ -1,0 +1,61 @@
+.dash {
+    background-color: $background;
+    font-family: Iosevka Nerd Font;
+}
+
+.welcome {
+    background-color: $light_grey;
+    border-radius: 10px;
+    padding: 10px 0px 10px 0px;
+    margin: 12px;
+    margin-bottom: 7px;
+}
+
+.welcometxt {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.control {
+    background-color: $light_grey;
+    border-radius: 10px;
+    padding: 10px 0px 10px 0px;
+    margin: 12px;
+    margin-top: 7px;
+}
+
+.volb {
+    padding: 4px 0px 4px 4px;
+}
+
+.voli {
+    font-size: 16px;
+    margin: 0px 14px 0px 6px;
+}
+
+.ramb {
+    padding: 4px 0px 4px 4px;
+}
+
+.rami {
+    font-size: 16px;
+    margin: 0px 14px 0px 6px;
+}
+
+.rams highlight {
+    background-color: $red;
+    border-radius: 10px;
+}
+
+scale trough {
+    all: unset;
+    background-color: $background;
+    min-width: 150px;
+    min-height: 10px;
+    border-radius: 10px;
+}
+
+highlight {
+    background-color: $blue;
+    border-radius: 10px;
+}

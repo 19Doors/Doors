@@ -1,0 +1,16 @@
+(defwindow screenshot
+           :monitor 0
+           :geometry (geometry :x "0px"
+                               :y "0px"
+                               :width "100px"
+                               :height "2%"
+                               :anchor "top center")
+           :stacking "fg"
+           ; :reserve (struts :distance "34px" :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+  (screenshot))
+
+(defwidget screenshot 
+  (box :class "screenshot" :orientation "h" :space-evenly false
+    ))

@@ -1,0 +1,10 @@
+#!/bin/python3 
+import os
+
+os.popen('pacman -Sy')
+packages = os.popen('pacman -Qu | wc -l')
+packages = packages.read().strip()
+if int(packages) == 0: 
+    packages = "Updated!"
+
+print("  " + packages) 

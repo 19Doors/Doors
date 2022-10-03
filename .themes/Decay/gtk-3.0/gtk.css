@@ -1,0 +1,70 @@
+/* DEFINE COLORS */
+@define-color bg #101419;
+
+@define-color white #DEE1E6;
+
+@define-color blue1 #70A5EB;
+@define-color blue2 #5F94DA;
+@define-color blue3 #4E88D4;
+
+@define-color green #78DBA9;
+@define-color lgreen #7DDAC5;
+
+@define-color yellow #F1CF8A;
+
+@define-color orange #E9A180;
+
+@define-color magenta #C68AEE;
+
+@define-color cyan #74BEE9;
+
+@define-color red #E05F65;
+
+@define-color grey1 #242931;
+@define-color grey2 #485263;
+@define-color grey3 #21262E;
+@define-color grey4 #13171C;
+@define-color grey5 #1A1F25;
+
+* {
+	padding: 0px;
+}
+
+/* Thunar */
+.thunar {
+	background-color: @bg;
+}
+
+.thunar grid menubar {
+	padding: 10px;
+	background-color: #13171C;
+}
+
+.thunar grid toolbar {
+	padding: 10px;
+	background-color: #1A1F25;
+}
+
+.thunar grid toolbar toolbutton button image {
+	padding: 0px 3px 0px 3px;
+}
+
+.thunar grid toolbar toolitem widget box entry {
+	padding: 10px;
+	border-radius: 12px;
+	background-color: @bg;
+}
+
+.thunar grid toolbar toolitem widget box entry image {
+	padding-right: 10px;
+}
+.thunar grid menubar menuitem {
+	padding: 0px 3px 0px 3px;
+}
+.thunar grid paned scrolledwindow treeview.view {
+	background-color: #13171C;
+}
+
+treeview {
+	padding: 3px;
+}

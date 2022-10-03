@@ -14,12 +14,12 @@
 (defwindow bar
            :monitor 0
            :geometry (geometry :x "0%"
-                               :y "0px"
+                               :y "722px"
                                :width "100%"
-                               :height "2%"
+                               :height "0px"
                                :anchor "top center")
            :stacking "fg"
-           :reserve (struts :distance "34px" :side "top")
+           :reserve (struts :distance "45px" :side "bottom")
            :windowtype "dock"
            :wm-ignore false
   (bar))
@@ -33,7 +33,7 @@
 
 (defwidget left []
   (box :class "left" :orientation "h" :halign "start"
-    (lef)))
+    ))
 
 (defwidget lef[]
   (box :class "ok" :orientation "h" :space-evenly false
@@ -53,12 +53,38 @@
   (box :class "center" :orientation "h" :halign "center"))
 
 
+; (defwidget right []
+;   (box :class "right" :orientation "h" :halign "end" :space-evenly false
+;     (layout)
+;     (sep)
+;     (storage)
+;     (sep)
+;     (time)))
+
+; (defwidget right []
+;   (box :class "right" :orientation "h" :halign "end" :space-evenly false
+;     (volume)
+;     (battery)
+;     (pacman)))
+
 (defwidget right []
   (box :class "right" :orientation "h" :halign "end" :space-evenly false
-    (storage)
-    (sep)
+    (batvol)
     (time)))
 
+(defwidget batvol []
+   (box :class "batvolbox" :orientation "h" :space-evenly false
+    (box :class "batvol" :orientation "h" :space-evenly false 
+      (label :class "bsicon" :text bstatus)
+      (label :class "bvtext" :text btv))))
+
+(defwidget pacman []
+  (box :class "pacman" :orientation "h" :space-evenly false 
+    (label :class "ptext" :text updates)))
+
+(defwidget layout []
+  (box :class "layout" :orientation "h" :space-evenly false 
+    (label :class "lttext" :text layout)))
 
 (defwidget storage []
   (box :class "storage" :orientation "h" :tooltip "Storage" :space-evenly false

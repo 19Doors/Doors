@@ -1,0 +1,35 @@
+#!/bin/python3
+import os
+
+percent = os.popen('cat /sys/class/power_supply/BAT1/capacity')
+percent = percent.read().strip()
+percent = int(percent)
+
+status = os.popen('cat /sys/class/power_supply/BAT1/status')
+status = status.read().strip()
+
+if status == "Charging":
+    status = ""
+elif percent <= 5:
+    status = "  "
+elif percent > 5 and percent <= 10:
+    status = "  "
+elif percent > 10 and percent <= 20:
+    status = "  " 
+elif percent > 20 and percent <= 30:
+    status = "  " 
+elif percent > 30 and percent <=40:
+    status = "  "
+elif percent > 40 and percent <=50:
+    status = "  "
+elif percent > 50 and percent <=60:
+    status = "  "
+elif percent > 60 and percent <=70:
+    status = "  "
+elif percent > 70 and percent <=80:
+    status = "  "
+elif percent > 80 and percent <=90:
+    status = "  "
+else: status = "  "
+
+print(status + " ")

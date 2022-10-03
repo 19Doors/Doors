@@ -1,3 +1,8 @@
 #!/bin/bash
 
-sudo pacman -S yay 
+mkdir ~/.config
+sudo cp -r pacman.conf /etc/pacman.conf 
+sudo cp -r mirrorlist /etc/pacman.d/mirrorlist 
+cp -r gtk-3.0/ ~/.config/
+sudo pacman -S yay termite
+sudo pacman -S vim neovim

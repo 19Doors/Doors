@@ -1,0 +1,13 @@
+(defpoll datetime :interval "1s" 'date +"%H:%M"')
+
+; Updates
+(defpoll updates :interval "1m" 'pacman -Qu | wc -l')
+
+; Storage
+; (defpoll storage :interval "2m" "df -h /dev/sda2 | awk 'NR==2 { print 100-$5 }'")
+(defpoll storage :interval "2m" "df -h /dev/sda2 | awk 'NR==2 { print $4 }'")
+
+; (deflisten workspace "scripts/getWorkspace")
+(defpoll workspace :interval "1ms" "scripts/getWorkspace")
+
+(defpoll layout :interval "0ms" "scripts/getLayout")

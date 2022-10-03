@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Decay
+Comment=Dark theme created using the awesome Decay color pallete
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Decay
+MetacityTheme=Decay
+IconTheme=Adwaita
+ButtonLayout=:minimize,maximize,close

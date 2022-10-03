@@ -1,0 +1,44 @@
+; ██████╗  █████╗ ███████╗██╗  ██╗███████╗██╗  ██╗ ██████╗ ██████╗ ████████╗
+; ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔════╝██║  ██║██╔═══██╗██╔══██╗╚══██╔══╝
+; ██║  ██║███████║███████╗███████║███████╗███████║██║   ██║██████╔╝   ██║   
+; ██║  ██║██╔══██║╚════██║██╔══██║╚════██║██╔══██║██║   ██║██╔══██╗   ██║   
+; ██████╔╝██║  ██║███████║██║  ██║███████║██║  ██║╚██████╔╝██║  ██║   ██║   
+; ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   
+;                                                                          
+; author: @19Doors
+
+(defwindow dash
+           :monitor 0
+           :geometry (geometry :x "10px"
+                               :y "35px"
+                               :width "16%"
+                               :height "30px"
+                               :anchor "top left")
+           :stacking "fg"
+           :windowtype "dock"
+           :wm-ignore false
+  (dash))
+
+(defwidget dash [] 
+  (box :class "dash" :orientation "v" :space-evenly false
+    (welcome)
+    (control)))
+
+(defwidget welcome []
+  (box :class "welcome" :orientation "h"
+    (label :class "welcometxt" :text "Welcome @19Doors!")))
+
+(defwidget control []
+  (box :class "control" :orientation "v"
+    (box :class "volb" :orientation "h" :space-evenly false
+      (label :class "voli" :text "")
+      (scale :min 0 :max 101 :orientation "h" :value vol :onchange "amixer sset 'Master' {}%"))
+    (box :class "ramb" :orientation "h" :space-evenly false
+      (label :class "rami" :text "")
+      (scale :class "rams" :min 0 :max 101 :orientation "h" :value ram ))
+    (box :class "storab" :orientation "h" :space-evenly false
+      (label :class "storai" :text "okok"))))
+
+(defpoll vol :interval "1ms" "scripts/volume")
+(defpoll ram :interval "10s" "scripts/getRam")
+

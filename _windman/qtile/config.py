@@ -41,6 +41,8 @@ browser = "brave"
 #def ok():
 #    now = datetime.now()
 #    current_time = now.strftime("%d|%b|%Y|%H:%M:%S")
+#    take = subprocess.run(["maim", "~/Pictures/Screenshots"+current_time+".png"])
+#    take.returncode
 #    lazy.spawn("maim Pictures/Screenshots/"+current_time+".png")
 
 # For my Cursor
@@ -101,7 +103,8 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("dmenu_run -h 28"), desc="Spawn a command using a prompt widget"),
     Key([mod, "control"], "p", lazy.spawn("rofi -show run")),
-    Key([mod], "o", lazy.spawn("maim Pictures/Screenshots/ok.png")),
+    Key(["mod1"], "c", lazy.spawn("screenshot")),
+#    Key([mod], "o", ok()),
 
 
     Key(["control"], "p", lazy.spawn("powermenu")),
@@ -171,12 +174,14 @@ groups.append( ScratchPad('scratchpad', [
         DropDown('removables', 'termite --exec="ranger /run/media/sakaar"', width=0.5, height = 0.5, x=0.25, y=0.2),
         DropDown('alsa', 'termite -e alsamixer', width=0.5, height = 0.5, x=0.25, y=0.2),
         DropDown('terminal', 'termite', width=0.5, height = 0.5, x=0.25, y=0.2),
+        DropDown('music', 'termite --exec="cmus"', width=0.5, height = 0.5, x=0.25, y=0.2),
     ]) )
 
 scratchkeys = [ 
         Key(['control'], '1', lazy.group['scratchpad'].dropdown_toggle('terminal')),
         Key(['control'], '2', lazy.group['scratchpad'].dropdown_toggle('alsa')),
         Key(['control'], '3', lazy.group['scratchpad'].dropdown_toggle('ranger')),
+        Key(['control'], '4', lazy.group['scratchpad'].dropdown_toggle('music')),
         Key(['control'], '0', lazy.group['scratchpad'].dropdown_toggle('removables')),
         ]
 
@@ -186,10 +191,10 @@ colors = ['#010206', '#F1EDEE', '#7A6563', '#36C9C6', '#56667A']
 
 layouts = [
     layout.Columns(
-        margin=[6,6,6,6],
+        margin=[7,6,7,6],
         border_focus = "#21262e",
         # border_focus = ['#101419','#101419','#dee1e6'],
-        border_width = 2,
+        border_width = 0,
         border_on_single = True,
 
         border_normal = '21262e'
@@ -197,20 +202,21 @@ layouts = [
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-    layout.Bsp(),
+    # layout.Bsp(),
     layout.Floating(
-        border_focus = '#F1EDEE',
-        border_normal = colors[4],
+        border_focus = "#21262e",
+        border_on_single = False,
         border_width = 0,
+        border_normal = '21262e',
         ),
-    layout.Matrix(),
+    # layout.Matrix(),
     # layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
-    # layout.Tile(),
-    layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
+    #  layout.Tile(),
+    # layout.TreeTab(),
+    #  layout.VerticalTile(),
+    #  layout.Zoomy(),
 ]
 
 widget_defaults = dict(
@@ -319,10 +325,9 @@ floating_layout = layout.Floating(
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
+        Match(wm_class="Thunar"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"), # GPG key password entry
-        Match(title="xterm"),
-        Match(title="dolphin"),
     ],
 
 

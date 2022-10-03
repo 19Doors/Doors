@@ -1,0 +1,23 @@
+#!/bin/python3
+import os
+
+volume = os.popen("amixer sget Master | grep 'Mono:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+volume = volume.read().strip()
+volume = int(volume)
+
+vols = ""
+
+if volume <= 0:
+    vol = "婢"
+elif volume > 0 and volume <= 35 :
+    vol = ""
+elif volume > 35 and volume <= 70 :
+    vol = ""
+else: vol = ""
+
+percent = os.popen('cat /sys/class/power_supply/BAT1/capacity')
+percent = percent.read().strip()
+percent = int(percent)
+
+print(str(percent) + "%" + " | " + vol + "  " + str(volume) + "%")
+
