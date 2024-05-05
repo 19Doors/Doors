@@ -15,4 +15,4 @@
     (box :orientation "h" :class "bigpower"
       (eventbox :cursor "pointer" :onclick "shutdown now" "")
       (eventbox :cursor "pointer" :onclick "reboot" "")
-      (eventbox :cursor "pointer" :onclick "kill -9 -1" "")))
+      (eventbox :cursor "pointer" :onclick "dm-tool lock" "")))

@@ -23,4 +23,4 @@
   (label :text foo))
 
 (defvar foo "")
-(defpoll logger :interval "1s" "$HOME/.config/dunst/logger.sh")
+(defpoll logger :interval "10s" "$HOME/.config/dunst/logger.sh")

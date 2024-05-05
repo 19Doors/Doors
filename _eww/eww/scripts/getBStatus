@@ -1,11 +1,11 @@
 #!/bin/python3
 import os
 
-percent = os.popen('cat /sys/class/power_supply/BAT1/capacity')
+percent = os.popen('cat /sys/class/power_supply/BAT0/capacity')
 percent = percent.read().strip()
 percent = int(percent)
 
-status = os.popen('cat /sys/class/power_supply/BAT1/status')
+status = os.popen('cat /sys/class/power_supply/BAT0/status')
 status = status.read().strip()
 
 if status == "Charging":

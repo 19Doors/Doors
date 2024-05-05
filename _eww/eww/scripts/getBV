@@ -15,7 +15,7 @@ elif volume > 35 and volume <= 70 :
     vol = ""
 else: vol = ""
 
-percent = os.popen('cat /sys/class/power_supply/BAT1/capacity')
+percent = os.popen('cat /sys/class/power_supply/BAT0/capacity')
 percent = percent.read().strip()
 percent = int(percent)
 
