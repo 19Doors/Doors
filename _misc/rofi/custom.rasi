@@ -1,0 +1,44 @@
+/*
+
+19Doors
+
+*/
+
+* {
+  background-color: #101419;
+  color: #DEE1E6;
+  font: "Ubuntu 12";
+  margin: 0px;
+  padding: 0px;
+}
+
+window {
+}
+
+horibox {
+  children: ["entry", "listview"];
+}
+
+entry,prompt {
+  background-color: #e05f65;
+  padding: 10px;
+}
+
+mainbox {
+  margin: 20px;
+}
+
+listview {
+  padding: 10px;
+  spacing: 0px;
+}
+
+element {
+  children: [ element-text, element-icon ];
+  padding: 5px;
+}
+
+element-text {
+  margin: 0px;
+  padding: 5px;
+}
