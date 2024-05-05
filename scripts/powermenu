@@ -1,0 +1,5 @@
+#!/bin/sh
+
+eww open --toggle powermenu
+sleep 5 
+eww open --toggle powermenu

@@ -9,7 +9,8 @@ eww open bar &
 # feh --bg-fill ~/wallpapers/cars/mclaren.png
 # feh --bg-fill ~/wallpapers/landscapes/conv-tree.png
 # feh --bg-fill ~/wallpapers/conv-GreenBlueCoast.png
-feh --bg-fill ~/wallpapers/misc/conv-anonymous.png
+# feh --bg-fill ~/wallpapers/misc/conv-anonymous.png
+feh --bg-fill ~/wallpapers/landscapes/conv-colourful_mountain_clouds.png
 dunst -c ~/.config/dunst/dunstrc &
 picom --experimental-backend &
 # Storage

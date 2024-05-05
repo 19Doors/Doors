@@ -1,7 +1,6 @@
 # Copyright (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
+# Copyright (c) 2012 Randall Ma Copyright (c) 2012-2014 Tycho Andersen
 # Copyright (c) 2012 Craig Barnes
 # Copyright (c) 2013 horsik
 # Copyright (c) 2013 Tao Sauvage
@@ -30,7 +29,6 @@ from datetime import datetime
 from libqtile import bar, layout, widget, hook, extension
 from libqtile.config import Click, Drag, Group, Key, Match, ScratchPad, Screen, DropDown
 from libqtile.lazy import lazy
-
 
 
 mod = "mod4"
@@ -86,6 +84,8 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([], "F6", lazy.spawn("sudo brightness -"), desc="Reset all window sizes"),
+    Key([], "F7", lazy.spawn("sudo brightness +"), desc="Reset all window sizes"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -102,14 +102,16 @@ keys = [
     Key([mod, "control"], "r", lazy.restart(), desc="Restarts"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("dmenu_run -h 28"), desc="Spawn a command using a prompt widget"),
-    Key([mod, "control"], "p", lazy.spawn("rofi -show run")),
+    Key([mod, "control"], "p", lazy.spawn("rofi -show drun")),
     Key(["mod1"], "c", lazy.spawn("screenshot")),
 #    Key([mod], "o", ok()),
 
 
     Key(["control"], "p", lazy.spawn("powermenu")),
+    Key([mod], "p", lazy.spawn("dm-tool lock")),
     Key(["control"], "n", lazy.spawn("eww open --toggle noti")),
     Key(["control"], "o", lazy.spawn("eww open --toggle colorpalette"))
+
 
 ]
 
@@ -175,6 +177,7 @@ groups.append( ScratchPad('scratchpad', [
         DropDown('alsa', 'termite -e alsamixer', width=0.5, height = 0.5, x=0.25, y=0.2),
         DropDown('terminal', 'termite', width=0.5, height = 0.5, x=0.25, y=0.2),
         DropDown('music', 'termite --exec="cmus"', width=0.5, height = 0.5, x=0.25, y=0.2),
+        DropDown('btop', 'termite --exec="btop"', width=0.5, height = 0.5, x=0.25, y=0.2),
     ]) )
 
 scratchkeys = [ 
@@ -183,6 +186,7 @@ scratchkeys = [
         Key(['control'], '3', lazy.group['scratchpad'].dropdown_toggle('ranger')),
         Key(['control'], '4', lazy.group['scratchpad'].dropdown_toggle('music')),
         Key(['control'], '0', lazy.group['scratchpad'].dropdown_toggle('removables')),
+        Key(['control'], '5', lazy.group['scratchpad'].dropdown_toggle('btop')),
         ]
 
 keys.extend(scratchkeys)
