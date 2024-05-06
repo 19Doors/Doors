@@ -3,6 +3,14 @@ bat
 gtop
 htop
 eww
+*vim
+neovim
+*xorg-xinit
+*udiskie
+zsh
+starship
+ohmyzsh
+ranger
 
 anaconda
 
@@ -22,3 +30,10 @@ firefox
 virtualbox
 calibre
 
+tree
+
+yay
+termite
+
+Font:
+iosevka, ubuntu, mononoki
