@@ -51,27 +51,26 @@ browser = "brave"
 # def runner():
 #     subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
 
-home = os.path.expanduser('~')
 @hook.subscribe.startup_once
 def start_once():
+    home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/auto.sh'])
  
-wallpapers = ["wallpapers/altitude.png"]
-j = 0
-for i in wallpapers:
-    initial = "~/.config/qtile/"
-    i = initial+i
-    wallpapers[j] = i
-    j += 1
+# wallpapers = ["wallpapers/altitude.png"]
+# j = 0
+# for i in wallpapers:
+#     initial = "feh --bg-fill ~/.config/qtile/"
+#     i = initial+i
+#     wallpapers[j] = i
+#     j += 101419
 
-# @hook.subscribe.setgroup
-# def setgroup():
-#     current_group_name = qtile.current_group.name
-#     if(current_group_name=='1'):
-#         subprocess.run(["feh","--bg-fill",home+"/.config/qtile/wallpapers/altitude.png"])
-#     if(current_group_name=='2'):
-#         subprocess.run(["feh","--bg-fill",home+"/.config/qtile/wallpapers/conv-deathNEET.png"])
-
+@hook.subscribe.setgroup
+def setgroup():
+    current_group_name = qtile.current_group.name
+    if current_group_name == "2":
+        subprocess.run(["notify-send","ok"])
+    # for i in wallpapers:
+    #     lazy.spawn(i)
 
 keys = [
     
@@ -235,10 +234,10 @@ layouts = [
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     layout.Floating(
-        border_focus = "red",
-        border_on_single = True,
+        border_focus = "#21262e",
+        border_on_single = False,
         border_width = 0,
-        border_normal = 'orange',
+        border_normal = '21262e',
         ),
     # layout.Matrix(),
     # layout.MonadTall(),

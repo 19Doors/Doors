@@ -10,8 +10,10 @@ eww open bar &
 # feh --bg-fill ~/wallpapers/landscapes/conv-tree.png
 # feh --bg-fill ~/wallpapers/conv-GreenBlueCoast.png
 # feh --bg-fill ~/wallpapers/misc/conv-anonymous.png
-feh --bg-fill ~/wallpapers/landscapes/conv-colourful_mountain_clouds.png
+#feh --bg-fill ~/wallpapers/landscapes/conv-colourful_mountain_clouds.png
+feh --bg-fill ~/.config/qtile/wallpapers/altitude.png &
 dunst -c ~/.config/dunst/dunstrc &
-picom --experimental-backend &
+#picom --experimental-backend &
+picom &
 # Storage
 udiskie &
