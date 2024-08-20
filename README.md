@@ -17,7 +17,7 @@ My display is configured for maximum efficiency, with multiple workspaces manage
 - **Theme**: Decay 
 - **Plugins**: Includes Telescope, LSPSaga, Lazy ... 
 - **Custom Keybindings**: Faster Navigation and Editing 
-- **Details**: ![Click Me](https://github.com/19Doors/nvim-setup-3.0)
+- **Details**: [Click Me](https://github.com/19Doors/nvim-setup-3.0)
 
 Welcome to my Dotfiles repository! This collection contains my custom configurations for various tools and software, enabling a tailored and efficient development environment. These dotfiles are designed for Linux systems and focus on productivity, customization, and aesthetics.
 
