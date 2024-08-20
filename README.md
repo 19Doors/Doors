@@ -6,6 +6,7 @@
 ## Setup
 
 ![Desktop](images/desktop.png)
+![Editor](images/editor.png)
 
 Welcome to my Dotfiles repository! This collection contains my custom configurations for various tools and software, enabling a tailored and efficient development environment. These dotfiles are designed for Linux systems and focus on productivity, customization, and aesthetics.
 
